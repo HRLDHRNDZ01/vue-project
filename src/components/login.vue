@@ -16,6 +16,10 @@
     </form>
 
     <p v-if="message">{{ message }}</p>
+
+    <p>Don't have an account? 
+      <router-link to="/signup">Sign Up</router-link>
+    </p>
   </div>
 </template>
 
@@ -32,6 +36,11 @@ export default {
       // Simple validation
       if (username.value === 'admin@example.com' && password.value === '1234') {
         message.value = 'Login successful!';
+        setTimeout(() => {
+          message.value = '';
+          // Redirect to dashboard or another page
+          window.location.href = '/dashboard';
+        }, 1000);
       } else {
         message.value = 'Invalid credentials';
       }
@@ -44,12 +53,13 @@ export default {
 
 <style>
 .login-container {
-  width: 400px;
+  width: 450px;      /* slightly wider */
+  padding: 30px;     /* more padding */
   text-align: center;
-  padding: 20px;
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0px 0px 10px #ccc;
+  margin: auto;
 }
 
 .form-group {
@@ -59,11 +69,13 @@ export default {
 
 input {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-top: 5px;
   border-radius: 5px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
+
 
 button {
   padding: 10px 20px;

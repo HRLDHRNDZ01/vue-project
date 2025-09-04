@@ -1,11 +1,10 @@
 <template>
   <div id="app">
-    <Login />
+    <router-view></router-view> <!-- renders Login or Signup -->
   </div>
 </template>
 
 <script setup>
-import Login from './components/login.vue';
 </script>
 
 <style>
@@ -18,9 +17,9 @@ html, body {
 
 #app {
   display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: center;     /* center vertically */
-  height: 100vh;           /* full viewport height */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   background-color: #f5f5f5;
 }
 </style>
