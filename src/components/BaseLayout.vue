@@ -58,9 +58,7 @@
     <!-- Profile Modal -->
     <div v-if="profileModalOpen" class="modal-overlay" @click.self="closeProfileModal">
       <div class="modal">
-        <h3>User Profile</h3>
-        <p>Name: John Doe</p>
-        <p>Email: admin@example.com</p>
+        <Profile />
         <button @click="closeProfileModal">Close</button>
       </div>
     </div>
@@ -68,8 +66,11 @@
 </template>
 
 <script>
+import Profile from "@/components/Profile.vue";
+
 export default {
   name: "BaseLayout",
+  components: { Profile },
   data() {
     return {
       dropdownOpen: false,
@@ -97,6 +98,7 @@ export default {
   },
 };
 </script>
+
 
 <style scoped>
 /* --- same styles as before for sidebar, navbar, dropdown, modal --- */
