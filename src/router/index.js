@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Login from '../components/Login.vue';
 import Profile from "@/components/Profile.vue";
 import Signup from '../components/Signup.vue';
-import Dashboard from '../components/Dashboard.vue';
+import AdminDashboard from "@/components/AdminDashboard.vue";
 import Reservation from '../components/Reservation.vue';
 import Inventory from '@/components/Inventory.vue'; // Import Inventory component
 import Transactions from '@/components/Transactions.vue';
@@ -13,7 +13,7 @@ const routes = [
   { path: '/login', component: Login },
   { path: '/profile', component: Profile },
   { path: '/signup', component: Signup },
-  { path: '/dashboard', component: Dashboard },
+  { path: '/admin-dashboard', component: AdminDashboard },
   { path: '/reservation', component: Reservation },
   { path: '/inventory', component: Inventory },
   { path: '/transactions', component: Transactions},

@@ -7,7 +7,7 @@
       </button>
       <ul>
         <li>
-          <router-link to="/dashboard">
+          <router-link to="/admin-dashboard">
             <i class="fas fa-home"></i>
             <span v-if="!sidebarCollapsed">Dashboard</span>
           </router-link>
@@ -36,9 +36,9 @@
     <!-- Main Content -->
     <div class="main-content">
       <header class="navbar">
-        <h1 class="logo">My Dashboard</h1>
+        <h1 class="logo">Booking System</h1>
         <nav class="nav-right">
-          <router-link to="/dashboard">Home</router-link>
+          <router-link to="/admin-dashboard">Home</router-link>
           <div class="dropdown" @click="toggleDropdown">
             <span class="user-icon">👤</span>
             <div v-if="dropdownOpen" class="dropdown-menu" @click.stop>
@@ -103,7 +103,7 @@ export default {
 <style scoped>
 /* --- same styles as before for sidebar, navbar, dropdown, modal --- */
 .dashboard { display: flex; height: 100vh; width: 100vw; margin: 0; padding: 0; }
-.sidebar { width: 200px; background: #2c3e50; color: white; display: flex; flex-direction: column; transition: width 0.3s; }
+.sidebar { width: 200px; background: #42b983; color: white; display: flex; flex-direction: column; transition: width 0.3s; }
 .sidebar.collapsed { width: 60px; }
 .sidebar ul { list-style: none; padding: 0; margin: 0; }
 .sidebar li { padding: 15px; }

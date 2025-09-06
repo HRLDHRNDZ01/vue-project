@@ -1,24 +1,28 @@
 <template>
   <BaseLayout>
     <div class="dashboard-container">
-      <h2>Welcome to your Dashboard!</h2>
+      <h2>Welcome to Admin Dashboard!</h2>
       <p>Here’s a quick overview of your system.</p>
 
       <!-- Summary Cards -->
       <div class="cards">
         <div class="card">
+          <i class="fas fa-calendar-check fa-2x"></i>
           <h3>Total Reservations</h3>
           <p>{{ stats.reservations }}</p>
         </div>
         <div class="card">
+          <i class="fas fa-boxes fa-2x"></i>
           <h3>Inventory Items</h3>
           <p>{{ stats.inventory }}</p>
         </div>
         <div class="card">
+          <i class="fas fa-coins fa-2x"></i>
           <h3>Transactions</h3>
           <p>{{ stats.transactions }}</p>
         </div>
         <div class="card">
+          <i class="fas fa-hourglass-half fa-2x"></i>
           <h3>Pending Requests</h3>
           <p>{{ stats.pending }}</p>
         </div>
@@ -92,6 +96,14 @@ export default {
   padding: 20px;
   border-radius: 8px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.card i {
+  margin-bottom: 5px;
 }
 
 .recent table {

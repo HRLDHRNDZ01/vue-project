@@ -39,7 +39,7 @@ export default {
         setTimeout(() => {
           message.value = '';
           // Redirect to dashboard or another page
-          window.location.href = '/dashboard';
+          window.location.href = '/admin-dashboard';
         }, 1000);
       } else {
         message.value = 'Invalid credentials';
