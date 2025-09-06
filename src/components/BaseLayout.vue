@@ -25,9 +25,9 @@
           </router-link>
         </li>
         <li>
-          <router-link to="/module2">
+          <router-link to="/transactions">
             <i class="fas fa-cogs"></i>
-            <span v-if="!sidebarCollapsed">Module 2</span>
+            <span v-if="!sidebarCollapsed">Transactions</span>
           </router-link>
         </li>
       </ul>
