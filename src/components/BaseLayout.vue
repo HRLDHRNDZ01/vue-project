@@ -103,7 +103,7 @@ export default {
 <style scoped>
 /* --- same styles as before for sidebar, navbar, dropdown, modal --- */
 .dashboard { display: flex; height: 100vh; width: 100vw; margin: 0; padding: 0; }
-.sidebar { width: 200px; background: #42b983; color: white; display: flex; flex-direction: column; transition: width 0.3s; }
+.sidebar { width: 200px; background: #4442b9; color: white; display: flex; flex-direction: column; transition: width 0.3s; }
 .sidebar.collapsed { width: 60px; }
 .sidebar ul { list-style: none; padding: 0; margin: 0; }
 .sidebar li { padding: 15px; }
@@ -113,8 +113,13 @@ export default {
 .toggle-btn { background: none; border: none; color: white; padding: 15px; cursor: pointer; font-size: 18px; display: flex; justify-content: center; align-items: center; }
 
 .main-content { flex: 1; display: flex; flex-direction: column; }
-.navbar { background-color: #42b983; color: white; display: flex; justify-content: space-between; padding: 20px; }
+.navbar { background-color: #4442b9; color: white; display: flex; justify-content: space-between; padding: 20px; }
 .nav-right { display: flex; align-items: center; }
+.nav-right a {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+}
 .dropdown { position: relative; cursor: pointer; }
 .dropdown-menu { position: absolute; top: 40px; right: 0; background: white; color: #333; border: 1px solid #ddd; border-radius: 6px; display: flex; flex-direction: column; padding: 5px 0; min-width: 150px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
 .dropdown-menu button { width: 100%; padding: 10px 15px; border: none; background: none; text-align: left; cursor: pointer; color: #333; font-size: 14px; }

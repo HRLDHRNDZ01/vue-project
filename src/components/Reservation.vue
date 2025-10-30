@@ -236,7 +236,7 @@ form select {
 }
 
 form button {
-  background: #42b983;
+  background: #4442b9;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -245,7 +245,7 @@ form button {
 }
 
 form button:hover {
-  background: #36976b;
+  background: #282829;
 }
 
 table {

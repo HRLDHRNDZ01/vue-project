@@ -58,6 +58,7 @@ export default {
   text-align: left;
 }
 .transactions-table th {
-  background-color: #f4f4f4;
+  background-color: #4442b9;
+  color: white;
 }
 </style>
