@@ -9,22 +9,22 @@
         <div class="card">
           <i class="fas fa-calendar-check fa-2x"></i>
           <h3>Total Reservations</h3>
-          <p>{{ stats.reservations }}</p>
+          <p>{{ reservations.length }}</p>
         </div>
         <div class="card">
           <i class="fas fa-boxes fa-2x"></i>
           <h3>Inventory Items</h3>
-          <p>{{ stats.inventory }}</p>
+          <p>{{ inventory.length }}</p>
         </div>
         <div class="card">
           <i class="fas fa-coins fa-2x"></i>
           <h3>Transactions</h3>
-          <p>{{ stats.transactions }}</p>
+          <p>{{ transactions.length }}</p>
         </div>
         <div class="card">
           <i class="fas fa-hourglass-half fa-2x"></i>
           <h3>Pending Requests</h3>
-          <p>{{ stats.pending }}</p>
+          <p>{{ pendingRequests.length }}</p>
         </div>
       </div>
 
@@ -41,7 +41,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="txn in recentTransactions" :key="txn.id">
+            <tr v-for="txn in transactions" :key="txn.id">
               <td>{{ txn.id }}</td>
               <td>{{ txn.customer }}</td>
               <td>{{ txn.amount }}</td>
@@ -58,20 +58,26 @@
 import BaseLayout from "@/components/BaseLayout.vue";
 
 export default {
-  name: "Dashboard",
+  name: "AdminDashboard",
   components: { BaseLayout },
   data() {
     return {
-      stats: {
-        reservations: 12,
-        inventory: 48,
-        transactions: 30,
-        pending: 5,
-      },
-      recentTransactions: [
+      reservations: [
+        { id: 1, name: "John Doe", date: "2025-09-10", hours: 3 },
+        { id: 2, name: "Jane Smith", date: "2025-09-12", hours: 6 },
+      ],
+      inventory: [
+        { id: 1, item: "Room Keycard", stock: 50 },
+        { id: 2, item: "Bath Towels", stock: 200 },
+      ],
+      transactions: [
         { id: 101, customer: "John Doe", amount: "₱2,000", status: "Paid" },
         { id: 102, customer: "Jane Smith", amount: "₱1,500", status: "Pending" },
         { id: 103, customer: "Michael Lee", amount: "₱3,200", status: "Cancelled" },
+      ],
+      pendingRequests: [
+        { id: 201, request: "Room Change", status: "Pending" },
+        { id: 202, request: "Extra Bed", status: "Pending" },
       ],
     };
   },

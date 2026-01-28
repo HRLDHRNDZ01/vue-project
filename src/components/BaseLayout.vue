@@ -6,22 +6,27 @@
         <i class="fas" :class="sidebarCollapsed ? 'fa-bars' : 'fa-times'"></i>
       </button>
       <ul>
-        <li>
+        <!-- Admin sees Admin Dashboard -->
+        <li v-if="role === 'admin'">
           <router-link to="/admin-dashboard">
             <i class="fas fa-home"></i>
-            <span v-if="!sidebarCollapsed">Dashboard</span>
+            <span v-if="!sidebarCollapsed">Admin Dashboard</span>
           </router-link>
         </li>
+
+        <!-- User sees User Dashboard -->
+        <li v-if="role === 'user'">
+          <router-link to="/user-dashboard">
+            <i class="fas fa-home"></i>
+            <span v-if="!sidebarCollapsed">User Dashboard</span>
+          </router-link>
+        </li>
+
+        <!-- Common links for both -->
         <li>
           <router-link to="/reservation">
             <i class="fas fa-calendar-alt"></i>
             <span v-if="!sidebarCollapsed">Reservation</span>
-          </router-link>
-        </li>
-        <li>
-          <router-link to="/inventory">
-            <i class="fas fa-chart-bar"></i>
-            <span v-if="!sidebarCollapsed">Inventory</span>
           </router-link>
         </li>
         <li>
@@ -30,7 +35,16 @@
             <span v-if="!sidebarCollapsed">Transactions</span>
           </router-link>
         </li>
+
+        <!-- Admin-only -->
+        <li v-if="role === 'admin'">
+          <router-link to="/inventory">
+            <i class="fas fa-chart-bar"></i>
+            <span v-if="!sidebarCollapsed">Inventory</span>
+          </router-link>
+        </li>
       </ul>
+
     </aside>
 
     <!-- Main Content -->
@@ -38,7 +52,9 @@
       <header class="navbar">
         <h1 class="logo">Booking System</h1>
         <nav class="nav-right">
-          <router-link to="/admin-dashboard">Home</router-link>
+          <router-link :to="role === 'user' ? '/admin-dashboard' : '/user-dashboard'">
+            Home
+          </router-link>
           <div class="dropdown" @click="toggleDropdown">
             <span class="user-icon">👤</span>
             <div v-if="dropdownOpen" class="dropdown-menu" @click.stop>
@@ -76,6 +92,7 @@ export default {
       dropdownOpen: false,
       sidebarCollapsed: false,
       profileModalOpen: false,
+      role: "admin",
     };
   },
   methods: {
