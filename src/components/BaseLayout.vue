@@ -52,7 +52,7 @@
       <header class="navbar">
         <h1 class="logo">Booking System</h1>
         <nav class="nav-right">
-          <router-link :to="role === 'user' ? '/admin-dashboard' : '/user-dashboard'">
+          <router-link to="/admin-dashboard">
             Home
           </router-link>
           <div class="dropdown" @click="toggleDropdown">
@@ -143,6 +143,7 @@ export default {
 .dropdown-menu button:hover { background-color: #f0f0f0; }
 
 .modal-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; }
-.modal { background: white; padding: 20px; border-radius: 6px; min-width: 300px; }
+.modal { background:white; padding:20px; border-radius:6px; min-width:300px; display:flex; flex-direction:column; align-items:center; }
+.modal button { margin-top:15px; width:100px; background:#4442b9; color:white; border:none; }
 .content { flex: 1; padding: 20px; }
 </style>
