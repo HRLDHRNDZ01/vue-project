@@ -36,9 +36,9 @@
     </div>
 
     <!-- Close Button -->
-    <div class="close-btn-wrapper">
-      <button @click="$emit('close')">Close</button>
-    </div>
+    <!-- <div class="close-btn-wrapper">
+      <button @click="$emit('close')">Closes</button>
+    </div> -->
   </div>
 </template>
 
@@ -106,13 +106,13 @@ button {
   padding: 8px 15px;
   border: none;
   border-radius: 6px;
-  background-color: #42b983;
+  background-color: #4442b9;
   color: white;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #36976b;
+  background-color: #4442b9;
 }
 
 .close-btn-wrapper {
@@ -122,5 +122,10 @@ button:hover {
 
 .close-btn-wrapper button {
   width: 100px;
+  background-color: #4442b9;
+}
+
+.close-btn-wrapper button:hover {
+  background-color: #4442b9;
 }
 </style>
